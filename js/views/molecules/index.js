@@ -1,0 +1,40 @@
+import { Heading, Li, Link, Ul } from "../atoms/index.js"
+
+export const HeaderView = () => {
+    const element = document.createElement('header')
+    element.className = 'bg-slate-700 p-4 text-white'
+    const h1 = Heading('Sgt. Prepper')
+    element.append(h1)
+    return element
+}
+
+export const NavBarView = arrNavItems => {
+    const element = document.createElement('nav')
+    const ul = Ul('flex')
+
+    arrNavItems.forEach(item => {
+        const { href, title } = item
+
+        const li = Li()
+        const item1 = Link(href, title)
+        li.append(item1)
+        ul.append(li)
+    })
+
+    element.append(ul)
+    return element
+}
+
+export const MainView = (title, content) => {
+    const element = document.createElement('main')
+    element.className = "p-4 min-h-60"
+    const h1 = Heading(title)
+    element.append(h1, content)
+    return element
+}
+
+export const FooterView = () => {
+    const element = document.createElement('footer')
+    element.className = "h-[170px] p-4 bg-[url(./codealong-sgtprepper/images/Footer.png)] bg-center bg-no-repeat"
+    return element
+}
