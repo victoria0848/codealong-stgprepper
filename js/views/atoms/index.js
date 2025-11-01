@@ -41,3 +41,47 @@ export const Link = (to, text = '', className = '') => {
     element.innerText = text
     return element
 }
+
+export const Image = (src, title, className = '') => {
+    const element = document.createElement('img')
+    element.src = src
+    element.className = className
+    element.alt = title
+    element.title = title
+    return element
+}
+
+export const Form = (method = 'GET') => {
+    const element = document.createElement('form')
+    element.method = method
+    return element
+}
+
+export const Label = (title, id, className = 'mr-4') => {
+    const element = document.createElement('label')
+    element.htmlFor = id
+    element.innerText = title
+    element.className = className
+    return element
+}
+
+export const Input = (name, placeholder, type = 'text', value = '', className = 'border rounded p-2') => {
+    const element = document.createElement('input')
+    element.type = type
+    element.id = name
+    element.name = name
+    element.placeholder = placeholder
+    element.value = value
+    element.className = className
+    element.autocomplete = true
+    element.required = true
+    return element
+}
+
+export const Button = (title, type = 'submit', className = 'bg-green-500 p-2 rounded shadow-md shadow-inset') => {
+    const element = document.createElement('button')
+    element.type = type
+    element.textContent = title
+    element.className = className 
+    return element
+}

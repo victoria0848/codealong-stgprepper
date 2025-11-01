@@ -1,0 +1,44 @@
+.card {
+  @include card;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-md;
+
+  .card-info {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: $radius;
+      object-fit: cover;
+    }
+
+    .details {
+      h3 {
+        font-size: $fs-h3;
+        margin: 0;
+      }
+      p {
+        color: $color-muted;
+        font-size: $fs-small;
+      }
+    }
+  }
+
+  .price {
+    font-weight: 700;
+    font-size: $fs-large;
+    color: $color-dark;
+    text-align: right;
+
+    span {
+      color: $color-secondary;
+      font-size: $fs-small;
+      display: block;
+    }
+  }
+}

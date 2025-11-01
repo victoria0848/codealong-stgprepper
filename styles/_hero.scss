@@ -1,0 +1,22 @@
+.hero {
+  text-align: center;
+  padding: $space-xl 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent),
+              url('../img/hero-bg.jpg') center/cover no-repeat;
+  color: $color-light;
+
+  .hero-title {
+    font-size: $fs-h1;
+    font-family: $font-heading;
+    font-weight: 700;
+    span {
+      color: $color-primary;
+    }
+  }
+
+  p {
+    max-width: 700px;
+    margin: $space-md auto;
+    font-size: $fs-large;
+  }
+}

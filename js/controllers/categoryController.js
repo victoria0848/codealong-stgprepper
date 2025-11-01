@@ -1,18 +1,17 @@
 import { getList } from "../models/categoryModel.js"
 
 export const getCategoryList = async () => {
-    const data = await getList()
+    const url = new URL(window.location.href)
+    const curCategory = url.searchParams.get('category') || 'vand-og-vandrensning'
 
-    console.log(data)
+    const data = await getList()
 
     const formattedCategories = data.map(item => ({
         slug: item.slug,
         title: item.title,
-        url: `/index.htm#/produkter?category=${item.slug}`
+        url: `/index.htm?category=${item.slug}`,
+        textColor: curCategory === item.slug ? 'text-yellow-500' : 'text-white'
     }))
     
-    console.log(formattedCategories);
-    
-
     return formattedCategories
 }

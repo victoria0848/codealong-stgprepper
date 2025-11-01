@@ -1,0 +1,26 @@
+.button {
+  padding: $space-sm $space-md;
+  border: none;
+  border-radius: $radius;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-light;
+
+    &:hover {
+      background-color: darken($color-primary, 8%);
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: $color-light;
+
+    &:hover {
+      background-color: darken($color-secondary, 8%);
+    }
+  }
+}

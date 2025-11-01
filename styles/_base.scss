@@ -1,0 +1,18 @@
+body {
+  font-family: $font-main;
+  background-color: $color-bg;
+  color: $color-dark;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: $font-heading;
+  margin-bottom: $space-sm;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-md;
+}
