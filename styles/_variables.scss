@@ -1,8 +1,9 @@
 // Colors
-$color-primary: #4f46e5; // lilla/blå (accent)
-$color-secondary: #22c55e; // grøn "på lager"
+$color-main: #231f67; 
+$color-dark: #0e1c2f;
+$color-accent: #22c55e;
+$color-accent: #c5a722;
 $color-bg: #f9fafb;
-$color-dark: #1f2937;
 $color-light: #ffffff;
 $color-border: #e5e7eb;
 $color-muted: #6b7280;
@@ -28,4 +29,4 @@ $space-xl: 4rem;
 
 // Borders & shadows
 $radius: 12px;
-$shadow: 0 4px 12px rgba(0,0,0,0.08);
+$shadow: 0 4px 12px #00000014;

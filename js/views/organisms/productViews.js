@@ -1,5 +1,5 @@
 import { price2Dkk } from "../../utils/index.js";
-import { Div, Form, Fragment, Heading, Image, Link, Paragraph } from "../atoms/index.js"
+import { Button, Div, Form, Fragment, Heading, Image, Input, Link, Paragraph } from "../atoms/index.js"
 
 export const ProductListView = (products, category) => {
     // Opretter fragment (blank html tag)
@@ -9,7 +9,7 @@ export const ProductListView = (products, category) => {
         // Destructure assignment fra product object
         const { imageUrl, name, price, slug, stockText, stockClass, teaser } = product
 
-         // Opretter link box element
+        // Opretter link box element
         const linkBox = Link(`?category=${category}&product=${slug}`,'', 'block mb-4 p-4 border rounded flex justify-between')
 
         // Image kolonne
@@ -45,15 +45,15 @@ export const ProductListView = (products, category) => {
 
 export const ProductDetailsView = (product) => {
     const { id, name, imageUrl, description, price } = product
-    
+
     const element = Div('flex justify-between gap-4 p-4 border rounded-lg')
 
-    const imageCol = Div('shrink-0 w-[120px]')
-    const img = Image(`http://localhost:4000${imageUrl}`, name, 'w-[80px] flex-shrink-0 rounded')
+    const imageCol = Div('shrink-0 w-[300px]')
+    const img = Image(`http://localhost:4000${imageUrl}`, name, 'w-[90%] flex-shrink-0 rounded')
     imageCol.append(img)
 
     const infoCol = Div('flex-1 min-w-0')
-    const h3 = Heading(name,3,'font-bold')
+    const h3 = Heading(name,1,'font-bold mb-2')
     infoCol.append(h3)
 
     const p = Paragraph()
@@ -61,11 +61,11 @@ export const ProductDetailsView = (product) => {
     infoCol.append(p)
 
     const form = Form('POST')
-    const productId = Input('productId', 'hidden', id)
-    const quentity = Input ('quantity', '', 'number', 1)
+    const productId = Input('productId','','hidden',id)
+    const quantity = Input('quantity', '', 'number', 1)
     const button = Button('Læg i kurv', 'submit')
 
-    form.append(productId, quantity, button)
+    form.append(productId,quantity,button)
     infoCol.append(form)
 
     const priceCol = Div('text-2xl')

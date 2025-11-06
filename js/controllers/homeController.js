@@ -7,3 +7,14 @@ export const HomePage = async () => {
     p.innerText = "Velkommen til Sgt. Prepper webshop"
     return await Layout(title, p)
 }
+
+// export function renderHome() {
+//   const header = document.createElement("header");
+  
+//   const logo = document.createElement("img");
+//   logo.src = logoImg;
+//   logo.alt = "Webshop logo";
+
+//   header.appendChild(logo);
+//   document.body.prepend(header);
+// }

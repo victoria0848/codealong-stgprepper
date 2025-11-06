@@ -1,9 +1,13 @@
+import { addToCart } from "../models/cartModel.js";
 import { getDetails, getList } from "../models/productModel.js";
+import { isLoggedIn } from "../services/auth.js";
 import { ProductDetailsView, ProductListView } from "../views/organisms/productViews.js";
 import { Layout } from "./layoutController.js";
 
 // Funktion der styrer hvilken produktside der skal vises
 export const ProductPage = async () => {
+    isLoggedIn()
+
     // Henter værdier fra URL'en (fx ?category=mad&product=123)
     const { category = 'vand-og-vandrensning', product } = Object.fromEntries(new URLSearchParams(location.search));
     let html = ''
@@ -11,7 +15,7 @@ export const ProductPage = async () => {
     // Hvis der IKKE er valgt et specifikt produkt → vis produktliste
     if (!product) {
         html = ProductList()
-    } 
+    }
     // Ellers → vis detaljer for det valgte produkt
     else {
         html = ProductDetails(product)
@@ -40,7 +44,7 @@ export const ProductList = async () => {
     const html = ProductListView(formattedProducts, category)
 
     // Pakker det hele ind i layoutet (header, footer osv.)
-    const layout = Layout('Produkter', html)    
+    const layout = Layout('Produkter', html)
 
     // Returnerer den færdige side
     return layout
@@ -53,10 +57,10 @@ export const ProductDetails = async (product) => {
 
     // Laver HTML for produktdetaljerne
     const html = ProductDetailsView(data)
-    const form = html.querySeletor('form')
+    const form = html.querySelector('form')
 
-    form.addEventlistener8('submit', (e) => {
-    handleAddToCart(e)
+    form.addEventListener('submit', (e) => {
+        handleAddToCart(e)
     })
 
     // Pakker ind i layout (uden titel)
@@ -67,15 +71,14 @@ export const ProductDetails = async (product) => {
 }
 
 export const handleAddToCart = async (e) => {
-  e.preventDefault()
-  const form = e.currentTarget
+    e.preventDefault()
+    const form = e.currentTarget
 
-  const productId = form.productId.value
-  const quantity = form.quantity.value
+    const productId = form.productId.value
+    const quantity = form.quantity.value
 
-  if(quantity && productId) {
-    const data = await addToCart(productId, quantity)
-
-  }
+    if(quantity && productId) {
+        const data = await addToCart(productId, quantity)
+    }    
 
 }
