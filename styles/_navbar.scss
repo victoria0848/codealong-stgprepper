@@ -1,43 +1,45 @@
-.navbar {
-  background: linear-gradient(to right, #0f172a, #1e293b);
-  color: $color-light;
-  padding: $space-sm $space-lg;
-  @include flex-center(row, $space-md);
+@use 'variables';
+@use 'mixins';
 
-  .logo {
-    font-family: $font-heading;
-    font-size: $fs-h2;
-    font-weight: bold;
-    color: $color-light;
-  }
+.navbar {
+  background-color: variables.$color-lighten;
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: stretch;
 
   ul {
-    @include flex-center(row, $space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    li a {
-      color: $color-light;
-      text-decoration: none;
-      font-weight: 500;
+    li {
+      margin-right: 1rem;
+      color: variables.$color-light;
 
-      &:hover {
-        color: $color-secondary;
+      a {
+        font-family: 'ITC Avant Garde Gothic Pro', sans-serif;
+        font-size: 14px;
+        color: variables.$color-light;
+        font-style: normal;
+        font-weight: 500;
+        text-decoration: none;
+        line-height: normal;
+
+        &:hover {
+          color: variables.$color-accent;
+        }
+
+        &.active {
+          color: variables.$color-accent;
+          border-bottom: 3px solid variables.$color-accent;
+        }
       }
-    }
-  }
-
-  .login-btn {
-    @include flex-center;
-    background: $color-primary;
-    padding: $space-sm $space-md;
-    border-radius: $radius;
-    color: $color-light;
-    font-weight: 600;
-
-    &:hover {
-      background: darken($color-primary, 8%);
     }
   }
 }

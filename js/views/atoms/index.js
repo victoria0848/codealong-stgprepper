@@ -92,7 +92,7 @@ export const Input = (name, placeholder, type = 'text', value = '', className = 
 }
 
 // Laver et <button>-element (knap)
-export const Button = (title, type = 'submit', className = 'bg-green-500 px-3 py-2 rounded-lg shadow-md shadow-inset border') => {
+export const Button = (title, type = 'submit', className = 'btn') => {
     const element = document.createElement('button')
     element.type = type
     element.textContent = title

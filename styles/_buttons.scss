@@ -1,26 +1,47 @@
-.button {
-  padding: $space-sm $space-md;
+@use 'variables';
+@use 'mixins';
+
+// Basis knap
+.btn {
+  display: inline-block;
   border: none;
-  border-radius: $radius;
+  border-radius: variables.$radius;
+  background-color: variables.$color-lightened;
   font-weight: 600;
+  padding: 0.6rem 1.2rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 
-  &--primary {
-    background-color: $color-primary;
-    color: $color-light;
+// Primær knap
+.btn--primary {
+  @extend .btn !optional;
+  background: variables.$color-secondary;
+  color: variables.$color-light;
 
-    &:hover {
-      background-color: darken($color-primary, 8%);
-    }
+  &:hover {
+    background: variables.$color-secondary;
   }
+}
 
-  &--secondary {
-    background-color: $color-secondary;
-    color: $color-light;
+// Accent-knap 
+.btn--accent {
+  @extend .btn !optional;
+  background: variables.$color-accent;
+  color: variables.$color-light;
 
-    &:hover {
-      background-color: darken($color-secondary, 8%);
-    }
+  &:hover {
+    background: variables.$color-accent;
+  }
+}
+
+// Fare / advarsel-knap
+.btn--danger {
+  @extend .btn !optional;
+  background: #dc2626;
+  color: #fff;
+
+  &:hover {
+    background: variables.$color-dark;
   }
 }

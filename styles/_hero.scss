@@ -1,22 +1,33 @@
-.hero {
+@use 'variables';
+@use 'mixins';
+@use 'buttons';
+
+
+.header {
+  @include mixins.headings;
+  background-color: variables.$color-header;
+  color: white;
+  flex-shrink: 0;
+  gap: 1rem;
   text-align: center;
-  padding: $space-xl 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent),
-              url('../img/hero-bg.jpg') center/cover no-repeat;
-  color: $color-light;
+  
+  .loginp {
+    margin: 0.5rem;
+    @extend .btn;
+  }
 
-  .hero-title {
-    font-size: $fs-h1;
-    font-family: $font-heading;
-    font-weight: 700;
-    span {
-      color: $color-primary;
+  .login {
+      color: #ffffffe6;
+      font-weight: 400;
+      text-decoration: none;
     }
-  }
 
-  p {
-    max-width: 700px;
-    margin: $space-md auto;
-    font-size: $fs-large;
-  }
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+    }
+
+    h2 {
+      @include mixins.responsive-font(1.5rem, 2rem);
+    }
 }

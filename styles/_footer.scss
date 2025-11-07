@@ -1,7 +1,8 @@
+@use 'variables';
+@use 'mixins';
+
+
 .footer {
-  background-color: #0f172a;
-  color: $color-light;
-  text-align: center;
-  padding: $space-md;
-  font-size: $fs-small;
+  background-image: url('/images/footer-bg.svg');
+  padding: variables.$space-md;
 }

@@ -1,32 +1,22 @@
-// Colors
-$color-main: #231f67; 
-$color-dark: #0e1c2f;
-$color-accent: #22c55e;
-$color-accent: #c5a722;
-$color-bg: #f9fafb;
-$color-light: #ffffff;
-$color-border: #e5e7eb;
-$color-muted: #6b7280;
+// --------- COLORS ---------
+$color-light: #f9f9f9;
+$color-dark: #111;
+$color-accent: #4caf50;
+$color-secondary: #3b82f6;
+$color-header: #334156;
+$color-lighten: #64758B;
+$color-lightened: #A3B4CC;
+$color-border: #ccc;
+$color-underground: #eb251a;
 
-// Typography
-$font-main: 'Inter', sans-serif;
-$font-heading: 'Poppins', sans-serif;
+// --------- TYPOGRAPHY ---------
+$font-base: 'Inter', system-ui, sans-serif;
+$font-heading: 'Montserrat', sans-serif;
 
-// Font sizes
-$fs-base: 16px;
-$fs-small: 14px;
-$fs-large: 20px;
-$fs-h1: 36px;
-$fs-h2: 28px;
-$fs-h3: 22px;
+// --------- SIZES & SPACING ---------
+$radius: 55px;
+$gap: 1rem;
+$container-width: 1200px;
 
-// Spacing
-$space-xs: 0.25rem;
-$space-sm: 0.5rem;
-$space-md: 1rem;
-$space-lg: 2rem;
-$space-xl: 4rem;
-
-// Borders & shadows
-$radius: 12px;
-$shadow: 0 4px 12px #00000014;
+// --------- SHADOWS ---------
+$shadow-card: 0 2px 8px #0000001a;

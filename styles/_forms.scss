@@ -1,0 +1,28 @@
+@use 'variables';
+@use 'mixins';
+@use 'buttons';
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 2rem auto;
+
+label {
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: variables.$radius;
+    border: 1px solid variables.$color-border;
+    font-size: 1rem;
+}
+
+button {
+    @extend buttons, .btn--primary !optional;
+  }
+}
